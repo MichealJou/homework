@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f8f8;
+}
+
+.contaier {
+    position: relative;
+    width: 980px;
+    margin: 0;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #fff;
+    background: #fff;
+    min-height: 100%;
+    padding: 20px 25px 75px;
+    box-shadow: 0 1px 0 #aaaaaa;
+}
+
+.contaier .array {
+    text-align: center;
+}
+
+.contaier input[type='button'] {
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.button-giant {
+    font-size: 28px;
+    height: 70px;
+    line-height: 70px;
+    padding: 0 70px;
+}
+
+.button-pill {
+    border-radius: 200px;
+}
+
+.button-royal-flat {
+    background-color: #7B72E9;
+    border-color: #7B72E9;
+    color: #FFF;
+}
+
+.button {
+    color: #FFF;
+    background-color: #7b72e9;
+    border-color: #EEE;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 40px;
+    margin: 0;
+    display: inline-block;
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+}
+
+.button-royal:hover,
+.button-royal:focus {
+    background-color: #a49ef0;
+    border-color: #a49ef0;
+    color: #FFF;
+    outline: none;
+}
+
+.button-royal:active {
+    background-color: #827ae1;
+    border-color: #827ae1;
+    color: #5246e2;
+}
+.relust{
+    margin-top: 50px;
+    text-align: center;
+}
