@@ -1,0 +1,455 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 14px/100% arial, "Hiragino Sans GB", "Hiragino Sans GB W3", \5b8b\4f53;
+    background-color: #eff0f0;
+}
+
+.g-wrap {
+    min-width: 1190px;
+}
+
+.hao123-tools-wrap {
+    height: 61px;
+    width: 100%;
+    position: relative;
+    z-index: 120;
+    border-bottom: 1px solid #ccc;
+}
+
+.g-wd {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+.hao123-tools {
+    height: 60px;
+    font-size: 12px;
+    line-height: 22px;
+    clear: both;
+    position: relative;
+    z-index: 996;
+    font-family: 'Tahoma';
+}
+
+.sethome {
+    width: 60px;
+    height: 25px;
+    position: absolute;
+    left: 192px;
+    top: 0;
+    line-height: 1.6;
+    margin-top: 20px;
+    margin-right: 22px;
+    display: none;
+    float: left;
+    color: #fff;
+    z-index: 30;
+    display: inline;
+    text-decoration: none;
+    text-align: center;
+    background: url('../img/index_widthlg.png') no-repeat -20px -172px;
+}
+
+.hao123-col {
+    position: absolute;
+    top: 0;
+    height: 60px;
+    vertical-align: top;
+    left: 263px;
+}
+
+.colweather {
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 80px;
+    cursor: pointer;
+}
+
+.colweahter-city {
+    padding-left: 9px;
+    height: 60px;
+    line-height: 60px;
+    padding-right: 10px;
+    color: #999;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.weahtercity-arrow {
+    width: 9px;
+    height: 6px;
+    display: inline-block;
+    background: url('../img/index_widthlg.png') no-repeat -52px -97px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+.weahterinfo-icon {
+    display: inline-block;
+    line-height: 60px;
+    vertical-align: middle;
+    width: 26px;
+    height: 60px;
+    margin-left: 8px;
+    background-position: 0 13px;
+    background-repeat: no-repeat;
+}
+
+.weahterinfo-temperature {
+    font-family: 'arial';
+    margin-left: 8px;
+}
+
+.icon_huoche {
+    width: 23px;
+    height: 23px;
+}
+
+.icon_huoche:before {
+    display: inline-block;
+    content: " ";
+    width: 23px;
+    height: 23px;
+    vertical-align: middle;
+    margin-left: 40px;
+    background-image: url("../img/f177a3c4ed92b35318e536cbb6d9bf69.png");
+}
+
+.hao123-links {
+    float: right;
+    height: 60px;
+    padding: 0 230px 0 0;
+}
+
+.username {
+    display: block;
+    line-height: 60px;
+    position: relative;
+    z-index: 11;
+    float: left;
+}
+
+.star {
+    display: inline-block;
+    vertical-align: top;
+    width: 20px;
+    height: 60px;
+    margin-left: 10px;
+    background-image: url('../img/index_widthlg.png');
+    background-repeat: no-repeat;
+    background-position: -40px -110px;
+}
+
+.name {
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #999;
+    text-decoration: none;
+}
+
+.arrow {
+    background: url('../img/index_widthlg.png') no-repeat -52px -97px;
+    vertical-align: middle;
+    line-height: 60px;
+    display: inline-block;
+    width: 9px;
+    height: 6px;
+    margin-right: 3px;
+}
+
+.mail {
+    display: inline-block;
+    height: 68px;
+    width: 68px;
+    float: left;
+}
+
+.link {
+    display: block;
+    width: 36px;
+    height: 45px;
+    padding: 15px 10px 0 10px;
+    text-align: center;
+    color: #999;
+    height: 60px;
+    margin-left: 20px;
+    line-height: 60px;
+    padding: 0 0 0 31px;
+    text-align: left;
+    background-image: url('../img/index_widthlg.png');
+    background-repeat: no-repeat;
+    background-position: -96px -108px;
+    text-decoration: none;
+}
+
+.text {
+    margin-left: 5px;
+}
+
+.header-browser {
+    display: inline-block;
+    height: 60px;
+    overflow: hidden;
+    vertical-align: top;
+    position: relative;
+}
+
+.header-browser .browser {
+    display: inline-block;
+    padding: 0;
+    line-height: 60px;
+    padding-left: 32px;
+    padding-right: 9px;
+    color: #999;
+    background-image: url('../img/index_widthlg.png');
+    background-repeat: no-repeat;
+    background-position: -162px -109px;
+    cursor: pointer;
+}
+
+.hao123-search-panel {
+    position: relative;
+    z-index: 110;
+    width: 1000px;
+}
+
+.hao123-search {
+    height: 41px;
+    padding: 42px 0 0 166px;
+}
+
+.width-lg .search {
+    width: 800px;
+}
+
+.hao123-search .search {
+    display: inline-block;
+    zoom: 1;
+}
+
+.search .logo {
+    width: 104px;
+    height: 34px;
+}
+
+.search .left {
+    position: relative;
+    float: left;
+    margin: 0 20px 0 0;
+}
+
+.search .link1 .color {
+    background: url(../img/webv2.png) left top no-repeat;
+}
+
+.search .link1 {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    z-index: 100;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    outline: 0;
+}
+
+.search .link1 span {
+    width: 104px;
+    height: 34px;
+    display: block;
+}
+
+.hao123-search .search {
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+}
+
+.search .input-wrapper {
+    position: relative;
+    margin-right: 5px;
+}
+
+.search .input-shadow {
+    width: 538px;
+    height: 38px;
+    border: 1px solid #8a8a8a;
+    border-right: 0;
+}
+
+.search .input-shadow {
+    width: 440px;
+    height: 38px;
+    border: 1px solid #ababab;
+    background: url(../img/baidu-form.png) -319px 0 #fff no-repeat;
+}
+
+.g-ib {
+    display: inline-block;
+}
+
+.search .input {
+    width: 448px;
+}
+
+.right {
+    float: right;
+}
+
+.search .input {
+    width: 378px;
+    height: 18px;
+    padding: 6px 0;
+    border: 0;
+    margin: 4px 30px 0 60px;
+    font: 16px arial;
+}
+
+.tabs-toggle {
+    cursor: pointer;
+    position: absolute;
+    top: 1px;
+    left: 125px;
+    z-index: 1;
+    padding: 0 10px;
+    width: 38px;
+    height: 38px;
+    font: normal 12px/38px simsun;
+    text-decoration: none;
+    color: #999;
+    background: url(../img/baidu-form.png) -319px 0;
+}
+
+.tabs-toggle .arrow {
+    overflow: hidden;
+    position: absolute;
+    top: 16px;
+    left: 38px;
+    width: 9px;
+    height: 6px;
+    text-indent: -999px;
+    background: url(../img/index_widthlg.png) -52px -97px;
+}
+
+.search .input {
+    outline: none;
+}
+
+.search .hotword {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+    width: 24px;
+    height: 24px;
+    text-indent: -99999px;
+    z-index: 12;
+}
+
+.search .hot-num {
+    position: absolute;
+    top: -9px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    text-indent: 0;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    background: url(../img/sug_icon.png) no-repeat;
+    line-height: 18px;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.search .button-wrapper {
+    vertical-align: top;
+}
+
+.search .button {
+    width: 100px;
+    height: 38px;
+    border: 0;
+    font-size: 14px;
+    background: #ddd url('../img/baidu-form.png') no-repeat;
+    cursor: pointer;
+}
+
+.search .button {
+    width: 120px;
+    height: 40px;
+    background: url('../img/index_widthlg.png') no-repeat -20px 0;
+}
+
+.theme {
+    position: absolute;
+    float: right;
+    right: -179px;
+    top: 0;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    margin-left: 20px;
+}
+
+.theme span {
+    display: block;
+    float: right;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.theme .theme_1 {
+    background: #336600;
+}
+
+.theme .theme_2 {
+    background: #666633;
+}
+
+.theme .theme_3 {
+    background: #660033;
+}
+
+.theme .theme_4 {
+    background: #990033;
+}
+
+.theme .theme_5 {
+    background: #FF6699;
+}
+
+.hao123-bodyct {
+    position: relative;
+}
+
+.menus {
+    margin: 0 auto;
+    margin-bottom: 0;
+    height: 45px;
+    font-size: 14px;
+    position: relative;
+}
+
+.menus {
+    margin-top: 40px;
+    width: 1190px;
+    height: 38px;
+    border-top: 2px solid #099e6a;
+    border-bottom: 1px solid #eaeaea;
+    background-color: #fcfcfc;
+}
