@@ -1,0 +1,12 @@
+.menus {
+    border-top: 2px solid #336600;
+    border-bottom: 1px solid #336600;
+}
+
+.menus .link2.active {
+    background-color: #336600;
+}
+
+.tc-green {
+    color: #336600;
+}
