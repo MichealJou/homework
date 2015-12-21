@@ -11,38 +11,60 @@ var navListener = function(e) {
 EventUtil.addHandler(navListenerElement, "click", navListener);
 
 $(function() {
-    $.cookie('the_cookie', 'the_value', {
-        expires: 7
-    });
-
-    var theme = $.cookie('theme');
-    if (theme) {
-        changeTheme(theme);
-    }
-
+    //设置主题
+    var theme = getTheme("theme") ? getTheme("theme") : false;
+    changeTheme(theme);
+    
     $(".theme span").click(function() {
         var theme_select = $(this).data("theme");
-        if (theme_select == 1) {
-            changeTheme(1);
-        } else if (theme_select == 2) {
-            changeTheme(2);
-        } else if (theme_select == 3) {
-            changeTheme(3);
-        } else if (theme_select == 4) {
-            changeTheme(4);
-        } else if (theme_select == 5) {
-            changeTheme(5);
-        }
-        $.cookie('theme', theme_select);
+        changeTheme(theme_select);
 
     });
 
 });
 
 /**
- * 
+ * 改变主题
  */
 function changeTheme(o) {
-    var link = $("<link rel='stylesheet' href='css/theme_" + o + ".css'>");
-    $("head").append(link);
+    if (o) {
+        $("#theme").attr('href', 'css/theme_' + o + ".css");
+        setTheme('theme', o);
+    }
+
+}
+
+//存在缓存
+function setTheme(k, v) {
+    var localStorage = getLocalStorage();
+    if (localStorage) {
+        return localStorage.setItem(k, v);
+    } else {
+        $.cookie('the_cookie', 'the_value', {
+            expires: 7
+        });
+        $.cookie(k, v);
+    }
+
+}
+
+//获取
+function getTheme(o) {
+    var localStorage = getLocalStorage();
+    if (localStorage) {
+        return localStorage.getItem(o);
+    } else {
+        $.cookie(o);
+    }
+
+}
+//获取浏览器缓存对象
+function getLocalStorage() {
+    if (typeof localStorage == "object") {
+        return localStorage;
+    } else if (typeof globalStorage == "object") {
+        return globalStorage[location.host]
+    } else {
+        return false;
+    }
 }
