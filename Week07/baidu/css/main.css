@@ -7,6 +7,7 @@ html,
 body {
     font: 12px arial;
     color: #555;
+    background: #fffQ;
 }
 
 .wrap {
@@ -25,6 +26,40 @@ body {
 
 em {
     font-style: normal;
+}
+
+.show {
+    display: block!important;
+}
+
+.hidden {
+    display: none!important;
+}
+
+.masklayer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+    z-index: 60000;
+    background-color: rgb(0, 0, 0);
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60000;
+}
+
+
+/*  处理底部的下划线 在没有登录的情况下进行处理 */
+
+.cl_header_bottom {
+    border: 0;
+}
+
+.yidong_tp {
+    top: 20px!important;
+    right: 20px!important;
 }
 
 .header .left_header,
@@ -134,6 +169,58 @@ em {
     transform: rotate(-225deg);
     -webkit-transform: rotate(-225deg);
     -ms-transform: rotate(-225deg);
+}
+
+.s-menus-outer {
+    float: left;
+    display: -webkit-flex;
+    -webkit-flex-flow: row wrap;
+    -webkit-align-items: stretch;
+    display: -moz-flex;
+    -moz-flex-flow: row wrap;
+    -moz-align-items: stretch;
+    display: -ms-flexbox;
+    -ms-flex-flow: row wrap;
+    -ms-align-items: stretch;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    width: 719px;
+}
+
+.menus-wrapper,
+.s-ctner-menus .s-menu-setting {
+    display: inline-block;
+    zoom: 1;
+    float: left;
+    vertical-align: top;
+    height: 100%;
+}
+
+.s-menu-item {
+    color: #333;
+    width: 80px;
+    height: 39px;
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+}
+
+.s-menus-outer .menus-wrapper {
+    width: auto;
+}
+
+.s-menu-item:hover {
+    background-color: #b3b6bb !important;
+    color: #fff;
+    background-image: none !important;
+    filter: none !important;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    border-top: 1px solid #b3b6bb;
+    border-bottom: 1px solid #b3b6bb;
 }
 
 .header .right_header .right_header_account_down ul {
@@ -271,6 +358,536 @@ em {
     margin: 0 auto;
     width: 980px;
     text-align: center;
+}
+
+.mj_login_container {
+    font: 14px/18px arial, "\5b8b\4f53", sans-serif, "Microsoft YaHei", tahoma;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 450px;
+    width: 393px;
+    z-index: 60001;
+    background-color: #ffffff;
+}
+
+.mj_login_header {
+    position: relative;
+    width: 100%;
+    height: 47px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-width: 1px 1px 0 1px;
+    border-bottom: 0;
+    cursor: move;
+    overflow: hidden;
+}
+
+span.mj_error {
+    display: block;
+    min-height: 14px;
+    height: auto;
+    _height: 14px;
+    padding: 8px 0 2px 0;
+    line-height: 14px;
+    font-size: 12px;
+    color: #fc4343;
+}
+
+a.close-btn {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    outline: none;
+    display: block;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    top: 16px;
+    right: 16px;
+    background-image: url(../img/pass_login_icons_7241098f.png);
+    background-image: -webkit-image-set(url(../img/pass_login_icons_7241098f.png) 1x, url(../img/pass_login_icons_retina_a4662884.png) 2x);
+    background-image: -moz-image-set(url(../img/pass_login_icons_7241098f.png) 1x, url(../img/pass_login_icons_retina_a4662884.png) 2x);
+    background-image: -o-image-set(url(../img/pass_login_icons_7241098f.png) 1x, url(../img/pass_login_icons_retina_a4662884.png) 2x);
+    background-image: -ms-image-set(url(../img/pass_login_icons_7241098f.png) 1x, url(../img/pass_login_icons_retina_a4662884.png) 2x);
+    background-position: -56px -48px;
+}
+
+.mj_login_header > .mj_title_span {
+    width: auto;
+    height: 18px;
+    font-size: 16px;
+    font-family: 宋体;
+    font-weight: bold;
+    color: rgb(102, 102, 102);
+    text-indent: 50px;
+    margin-right: 29px;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    box-sizing: content-box;
+    background: -webkit-image-set(url("../img/baidu_logo_24_056405eb.png") 1x, url("../img/baidu_logo_48_cbe2e538.png") 2x) 18px 8px no-repeat;
+    padding: 15px 0px 13px;
+}
+
+a.close-btn:hover {
+    background-position: -72px -48px;
+}
+
+li.bd-acc-qzone .phoenix-btn-item {
+    background-position: -88px 0;
+}
+
+.other_login:before,
+.other_login:after {
+    content: " ";
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+
+.bd-acc-list li {
+    display: inline-block;
+    list-style: none;
+}
+
+.clear-fix:before,
+.clear-fix:after {
+    display: block;
+    content: " ";
+    clear: both;
+}
+
+.bd-acc-list li {
+    width: 40px;
+}
+
+.mj_content {
+    padding: 0 20px;
+}
+
+li.bd-acc-tsina .phoenix-btn-item {
+    background-position: -64px 0;
+}
+
+.mj_login_content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.tang-pass-pop-login label.pass-label-password {
+    background-position: 0 -147px;
+}
+
+.mj_content .pass-sms-btn {
+    background: url('../img/smsSwitchPhone_296e835b.png') no-repeat;
+    padding-left: 15px;
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+    cursor: pointer;
+    background-position: 0 0;
+}
+
+.tang-pass-pop-login-change {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    background: url(../img/pass_login_icons_7241098f.png) no-repeat 0 0;
+    z-index: 21;
+    _top: -44px;
+    _bottom: -1px;
+    _right: -1px;
+}
+
+.mj_login_content_app {
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 400px;
+    height: 399px;
+}
+
+.tang-pass-qrcode-info {
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    background: #f1f1f1;
+    display: inline-block;
+    padding: 3px 5px;
+    border-radius: 2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    margin: 20px 0 0 0;
+}
+
+.mj_qrcode {
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+    line-height: 36px;
+    margin-bottom: 15px;
+    padding-top: 40px;
+    padding-left: 0;
+    font-weight: bold;
+}
+
+.mj_input_focus {
+    border-color: #488ee7!important;
+}
+
+.tang-pass-pop-normalLogin {
+    background-position: 0 -86px;
+}
+
+.tang-pass-qrcode-info a {
+    font-size: 12px;
+    text-decoration: none;
+    color: rgb(27, 102, 199);
+    font-family: Arial, Helvetica, STHeiti, 宋体;
+}
+
+.tang-pass-qrcode-imgWrapper {
+    margin: 0 auto;
+    width: 136px;
+}
+
+.tang-pass-qrcode-imgWrapper img {
+    padding: 5px;
+    border: 1px solid #ccc;
+    width: 123px;
+    height: 123px;
+}
+
+.tang-pass-pop-normalLogin {
+    background-position: 0 -86px;
+}
+
+.phoenix-btn-item {
+    display: block;
+    margin-top: 15px;
+    margin-right: 25px;
+    color: #00C;
+    text-decoration: underline;
+    padding-left: 24px;
+    cursor: pointer;
+    font-size: 12px;
+    background-image: url('../img/pass_login_icons_7241098f.png');
+    background-image: -webkit-image-set(url(../img/pass_login_icons_7241098f.png) 1x, url(../img/pass_login_icons_retina_a4662884.png) 2x);
+    background-image: -moz-image-set(url(../img/pass_login_icons_7241098f.png) 1x, url(../img/pass_login_icons_retina_a4662884.png) 2x);
+    background-image: -o-image-set(url(../img/pass_login_icons_7241098f.png) 1x, url(../img/pass_login_icons_retina_a4662884.png) 2x);
+    background-image: -ms-image-set(url(../img/pass_login_icons_7241098f.png) 1x, url(../img/pass_login_icons_retina_a4662884.png) 2x);
+    background-repeat: no-repeat;
+    width: 0;
+    height: 24px;
+    overflow: hidden;
+}
+
+.tang-pass-pop-login-noimg input.open {
+    width: 260px;
+    padding-right: 50px;
+    padding-left: 38px;
+}
+
+.other_login_title {
+    display: block;
+    float: left;
+    color: #666;
+    font-size: 12px;
+}
+
+.pass-form-item {
+    position: relative;
+    margin: 0;
+    margin-bottom: 15px;
+    z-index: 18;
+}
+
+.pass-form-item.pass-form-item-memberPass {
+    height: 15px;
+}
+
+a.tang-pass-login {
+    position: relative;
+    right: 0;
+    float: right;
+    font-size: 12px;
+    text-decoration: none;
+    color: #1b66c7;
+    font-family: Arial, Helvetica, STHeiti, "宋体";
+}
+
+.pass-button {
+    background-color: #3f89ec;
+    display: block;
+    height: 48px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    background: #3f89ec;
+    border-radius: 3px;
+    border: none;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    -webkit-transition: .3s;
+}
+
+.pass-button-submit {
+    width: 350px;
+}
+
+.pass-button:focus {
+    outline: none;
+    background-color: #3a84e8;
+    border: none;
+}
+
+.regsiter {
+    position: absolute;
+    right: 0;
+    font-size: 12px;
+    text-decoration: none;
+    color: #1b66c7;
+    font-family: Arial, Helvetica, STHeiti, "宋体";
+}
+
+.pass-form-item-memberPass label {
+    display: inline;
+    color: #666;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.mj_content p.pass-smsSwitchWrapper {
+    text-align: right;
+    margin: 30px 0 10px 0;
+}
+
+.login_form {
+    padding-bottom: 50px;
+}
+
+label.pass-label-userName,
+label.pass-label-password,
+label.pass-label-smsPhone {
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    width: 0;
+    height: 24px;
+    overflow: hidden;
+    padding: 0 0 0 24px;
+    background-image: url(../img/input_icons_24_915272c4.png);
+    background-repeat: no-repeat;
+    z-index: 20;
+}
+
+.other_login {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    padding-left: 20px;
+    z-index: 16;
+    padding-bottom: 15px;
+}
+
+.tang-pass-pop-login-noimg {
+    position: relative;
+    width: 351px;
+    height: 42px;
+    border: 1px solid #dddddd;
+    line-height: 42px;
+}
+
+.right_bar_nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 88px;
+    border-left: 1px solid #e7e7e7;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    text-shadow: none;
+}
+
+.tang-pass-pop-login-noimg input.pass-text-input {
+    position: relative;
+    width: 260px;
+    padding-right: 50px;
+    border: none;
+    right: 0
+}
+
+label.pass-label-userName {
+    background-position: 0 -68px;
+}
+
+.s_bdbriwrapper a {
+    display: block;
+    text-align: center;
+    width: 66px;
+    height: 76px;
+    margin: 0 auto;
+    font-size: 12px;
+    border-bottom: #f0f0f0 1px solid;
+    color: #666;
+    text-decoration: none;
+    overflow: hidden;
+    text-shadow: none;
+    line-height: 14px;
+}
+
+#s_main {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 40px;
+    width: 895px;
+}
+
+.s-ctner-menus .s-menu-mine,
+.s-ctner-menus .s-menu-mine .mine-icon,
+.s-ctner-menus .s-menu-mine .mine-text {
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+}
+
+.s-ctner-menus .current,
+.s-ctner-menus .current:hover {
+    _position: relative;
+    background-color: #9a9da2 !important;
+    color: #fff;
+    font-weight: bold;
+    background-image: none !important;
+    filter: none !important;
+}
+
+.s-ctner-menus .s-menu-mine .mine-icon {
+    margin: 11px 0 0 20px;
+    width: 20px;
+    height: 18px;
+    background: url(../img/card_setts_fdb17359.png) no-repeat -15px 0;
+    _background: url(../img/card_setts_ie_57e87032.png) no-repeat -15px 0;
+}
+
+.s-ctner-menus .s-menu-mine:hover .mine-icon,
+.s-ctner-menus .current .mine-icon {
+    background-position: -144px 0;
+}
+
+.s-ctner-menus .s-menu-mine {
+    float: left;
+    text-align: left;
+    width: 124px;
+}
+
+.s-ctner-menus {
+    position: relative;
+    z-index: 11111;
+    width: 893px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 14px;
+    border-top: 1px solid #e9e9e9;
+    border-right: 1px solid #e9e9e9;
+    border-left: 1px solid #e9e9e9;
+    height: 39px;
+    line-height: 39px;
+}
+
+.s-menu-container {
+    width: 100%;
+    min-height: 35px;
+    _height: 35px;
+}
+
+.s-ctner-contents {
+    width: 893px;
+    min-height: 363px;
+    _height: 363px;
+    _overflow: visible;
+    border: 1px solid #e9e9e9;
+}
+
+.s_bdbriwrapper a img {
+    display: block;
+    height: 36px;
+    width: auto;
+    margin: 10px auto 5px;
+    cursor: pointer;
+}
+
+.s_bdbriwrapper .s_bdbrievenmore {
+    margin-top: 15px;
+    height: 30px;
+    width: 85px;
+    overflow: hidden;
+}
+
+.s_bri {
+    width: 86px;
+    height: 32px;
+    line-height: 32px;
+    color: white;
+    background: #38f;
+    background: #398bfb;
+    font-size: 13px;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 1px solid #398bfb;
+    text-decoration: none;
+}
+
+.s-sp-menu a {
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+    margin-left: 19px;
+    color: #555;
+    text-decoration: underline;
+    outline: none;
+    display: inline-block;
+    text-shadow: none;
+}
+
+.s_bdbriimgtitle {
+    color: #333;
+    text-align: center;
+    width: 66px;
+    height: 30px;
+    line-height: 34px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    border-bottom: #f0f0f0 1px solid;
+    font-size: 13px;
+    cursor: default;
+}
+
+.tang-pass-pop-login-noimg input.pass-text-input:focus {
+    border: none;
+    outline: none;
 }
 
 @media screen and (min-width: 750px) {

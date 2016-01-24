@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
 </head>
+<!-- 登录账号 test1 密码：123456-->
 
 <body>
     <div class="wrap">
@@ -26,7 +28,7 @@
                 <a class="userinfo" href="javascript:;">于仙1</a>
             </div>
             <!-- 手机天气结束 -->
-            <div class="left_header xs-vi-hidden">
+            <div class="left_header xs-vi-hidden hidden" id="left_header">
                 <!-- 城市 -->
                 <span class="left_city">
                 <em class="left_city_name">青岛:</em>
@@ -48,15 +50,16 @@
                 </div>
             </div>
             <!-- 右侧 显示 开始-->
-            <div class="right_header xs-vi-hidden">
+            <div class="right_header xs-vi-hidden yidong_tp">
                 <a href="javascript:;">新闻</a>
                 <a href="javascript:;">hao123</a>
                 <a href="javascript:;">地图</a>
                 <a href="javascript:;">视频</a>
                 <a href="javascript:;">贴吧</a>
-                <a class="right_header_account" href="javascript:;" data-show="show" data-show-id="arrown">于仙1</a>
+                <a class="right_header_account" href="javascript:;" data-show="show" data-show-id="arrown" id="logo_ed">于仙1</a>
+                <a class="right_header_account" href="javascript:;" id="logo">登录</a>
                 <a href="javascript:;" data-show="show" data-show-id="setting">设置</a>
-                <a href="javascript:;" class="right_more_product"><span>更多产品</span></a>
+                <a href="javascript:;" class="right_more_product" id="right_more_product"><span>更多产品</span></a>
                 <!-- 帐号开始 -->
                 <div class="right_header_account_down" id="arrown" style="display:none;">
                     <span class="right_header_account_down_arrown"></span>
@@ -65,7 +68,7 @@
                         <li><a href="javascript:;">个人中心</a></li>
                         <li><a href="javascript:;">帐号设置</a></li>
                         <li><a href="javascript:;">意见反馈</a></li>
-                        <li><a href="javascript:;">退出</a></li>
+                        <li><a href="javascript:;" id="logout">退出</a></li>
                     </ul>
                 </div>
                 <!-- 帐号结束 -->
@@ -100,7 +103,7 @@
         <!-- footer 部分 -->
         <div class="footer">
             <div class="footer_content">
-                <a class="sethome" href="//www.baidu.com/cache/sethelp/index.html" target="_blank">设为首页</a>
+                <a class="sethome" href="#" target="_blank">设为首页</a>
                 <span>
               ©2015Baidu 
             <a href="javascript:;">使用百度前必读</a>
@@ -110,7 +113,124 @@
                 </span>
             </div>
         </div>
+        <!-- 导航 nav start-->
+        <div class="mj_nav_1" id="s_main">
+            <div class="s-menu-container">
+                <div class="s-ctner-menus">
+                    <span id="s_menu_mine" class="s-menu-item s-menu-mine s-opacity-white-background current" data-id="nav1">
+                     <div class="mine-icon"></div>
+                      <div class="mine-text">我的关注</div>
+                  </span>
+                    <!-- -->
+                    <div class="s-menus-outer">
+                        <div id="s_menus_wrapper" class="menus-wrapper"><span class="s-menu-item s-opacity-white-background" data-id="nav2">导航</span></div>
+                        <div class="s-bg-space s-opacity-white-background"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="s-ctner-contents" id="nav1"></div>
+            <div class="s-ctner-contents" id="nav2"></div>
+        </div>
+        <!-- 导航 nav end-->
+        <!--右侧导航栏 开始-->
+        <div class="right_bar_nav" id="right_bar_nav" style="display:none;">
+            <div class="s_bdbriimgtitle">更多产品</div>
+            <div class="s_briscrollwrapperContainer">
+                <div class="s_briscrollwrapper s_bdbriscroll-ctrl-content s_bdbriscroll-onwheel" style="height: 285px;">
+                    <div class="s_bdbriwrapper">
+                        <a href="#" target="_blank">
+                            <img src="img/music.png">音乐</a>
+                        <a href="#" target="_blank"><img src="img/image.png">图片</a>
+                        <a href="#" target="_blank"><img src="img/zhidao.png">知道</a>
+                        <a href="#" target="_blank"><img src="img/wenku.png">文库</a>
+                        <a href="#" target="_blank"><img src="img/bang.png">风云榜</a>
+                        <a href="#" target="_blank"><img src="img/tuiguang.png">百度推广</a>
+                        <div class="s_bdbrievenmore"><a href="#" target="_blank">全部产品&gt;&gt;</a></div>
+                    </div>
+                </div>
+                <div class="s_bdbriscroll-ctrl-scroll" data-click="{fm:&quot;beha&quot;}" style="height: 273px; display: block;">
+                    <div class="s_bdbriscroll-axis" style="height: 273px;"></div>
+                    <div class="s_bdbriscroll-slider OP_LOG_BTN" style="display: block; top: 0px; height: 147px;">
+                        <div class="s_bdbriscroll-s-top"></div>
+                        <div class="s_bdbriscroll-s-bottom"></div>
+                        <div class="s_bdbriscroll-s-block"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--右侧导航栏 结束 -->
     </div>
+    <!-- 登录框 开始 -->
+    <div class="masklayer" style="display:none;"></div>
+    <div class="mj_login_container" id="login" style="display:none;">
+        <form id="loginform">
+            <!-- 输入账号登录 start -->
+            <div class="mj_login_content" id="login_yemian">
+                <div class="mj_login_header" id="login_header">
+                    <span class="mj_title_span">登录百度账号</span>
+                    <a href="javascript:;" class="close-btn" data-close="close"></a>
+                </div>
+                <div class="mj_content">
+                    <form class="login_form" onsubmit="return false;">
+                        <p class="pass-generalErrorWrapper">
+                            <span class="mj_error" id="mj_error"></span>
+                        </p>
+                        <p class="pass-smsSwitchWrapper">
+                            <a href="#" class="pass-sms-btn">短信快捷登录</a>
+                        </p>
+                        <p class="tang-pass-pop-login-noimg pass-form-item">
+                            <label for="userName" id="userNameLabel" class="pass-label pass-label-userName">手机/邮箱/用户名</label>
+                            <input id="userName" type="text" name="userName" class="pass-text-input pass-text-input-userName open" autocomplete="off" placeholder="手机/邮箱/用户名">
+                        </p>
+                        <p class="tang-pass-pop-login-noimg pass-form-item">
+                            <label for="passWord" id="userNameLabel" class="pass-label pass-label-password">密码</label>
+                            <input id="passWord" type="password" name="passWord" class="pass-text-input pass-text-input-userName open" autocomplete="off" placeholder="密码">
+                        </p>
+                        <p class="pass-form-item pass-form-item-memberPass">
+                            <input id="memberPass" type="checkbox" name="memberPass" class="pass-checkbox-input pass-checkbox-memberPass" checked="checked">
+                            <label for="memberPass" id="memberPassLabel" class="">下次自动登录</label>
+                            <a class="tang-pass-login" href="javascript:;">登录遇到问题</a>
+                        </p>
+                        <!-- 登录按钮 start -->
+                        <p class="tang-pass-pop-login-noimg pass-form-item">
+                            <input id="ss" type="button" class="pass-button pass-button-submit" value="登&nbsp;&nbsp;录">
+                            <a class="regsiter" href="javascript:;">立即注册</a>
+                        </p>
+                        <!-- 登录按钮 end-->
+                    </form>
+                </div>
+                <div class="other_login">
+                    <span class="other_login_title">可以使用以下方式登录</span>
+                    <ul class="bd-acc-list clear-fix">
+                        <li class="bd-acc-qzone">
+                            <a href="#" class="phoenix-btn-item"></a>
+                        </li>
+                        <li class="bd-acc-tsina">
+                            <a href="#" class="phoenix-btn-item"></a>
+                        </li>
+                    </ul>
+                    <div class="tang-pass-pop-login-change tang-pass-pop-normalLogin" id="pop_yemian">
+                    </div>
+                </div>
+            </div>
+            <!-- 输入账号登录 end -->
+            <!-- 二维码登录 start -->
+            <div class="mj_login_content" id="qrcode_login" style="display:none;">
+                <div class="mj_login_header" id="login_header1">
+                    <span class="mj_title_span">登录百度账号</span>
+                    <a href="javascript:;" class="close-btn" data-close="close"></a>
+                </div>
+                <div class="mj_login_content_app">
+                    <span class="mj_qrcode">手机扫描，安全登录</span>
+                    <div class="tang-pass-qrcode-imgWrapper"><img src="img/qrcode.png"></div>
+                    <div class="tang-pass-qrcode-info">请使用<a href="#">手机百度app</a>扫描登录</div>
+                </div>
+                <div class="tang-pass-pop-login-change tang-pass-pop-normalLogin" id="qrcode_login_footer"></div>
+            </div>
+            <!-- 二维码登录 end-->
+        </form>
+    </div>
+    <!-- 登录框  结束 -->
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 
