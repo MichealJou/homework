@@ -15,4 +15,24 @@ $(function() {
         $("#" + showId).nextAll().hide();
     });
 
+
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: 5000,
+        loop: true, //可选选项，自动滑动,
+        prevButton: '.swiper-button-prev',
+        nextButton: '.swiper-button-next',
+        pagination: '.swiper-pagination',
+        paginationElement: 'div',
+        paginationHide: true
+    })
+    var mySwiper = new Swiper('.swiper-container1', {
+        autoplay: 5000,
+        loop: true ,//可选选项，自动滑动,
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+        prevButton: '.swiper-button-prev1',
+        nextButton: '.swiper-button-next1'
+
+    })
+
 });
