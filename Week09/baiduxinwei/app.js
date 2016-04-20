@@ -9,7 +9,7 @@ var session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/admin/admin');
-var router = express.Router();
+
 var app = express();
 
 // view engine setup
@@ -29,10 +29,16 @@ app.use(session({
   saveUninitialized:true,
   secret: 'keyboard cat'
 }));
-router.use(function (req, res, next) {
+app.use(function(req, res, next) {
 
-  console.log('Timesssssss:', Date.now());
-  next();
+  var session = req.session;
+  var ifFlag = session.isFlag;
+  if(ifFlag || "/admin/login" == req.url){
+    next();
+  }else{
+    res.redirect("/admin/login");
+  }
+
 });
 app.use('/', routes);
 app.use('/users', users);
