@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>后台管理</title>
+    <link rel="stylesheet" href="__PUBLIC__/admin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="__PUBLIC__/admin/bootstrap/css/main.css">
+</head>
+
+<body>
+<!-- navbar -->
+<include file="Application/Admin/View/common/header.html"/>
+<!-- 菜单部分 -->
+<include file="Application/Admin/View/common/rg_menu.html"/>
+<div class="content">
+    <div class="container-fluid">
+        <div id="pad-wrapper">
+            <div class="table-wrapper products-table section">
+                <div class="row-fluid head">
+                    <div class="span12">
+                        <h4>新闻分类</h4>
+                    </div>
+                </div>
+                <div class="row-fluid filter-block">
+                    <div class="pull-right">
+                        <a class="btn-flat success new-product"  data-toggle="modal" data-target="#myModal">+ 新增产品</a>
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>
+                               类别
+                            </th>
+                            <th>
+                                顺序
+                            </th>
+                            <th>
+                                操作
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- row -->
+                        <foreach name="categoryList" item="category">
+                          <tr>
+                              <td>{$category.cate_name}</td>
+                              <td class="description">{$category.sort}</td>
+                              <td>
+                                  <a href="{:U('deleteCategory')}?id={$category.id}">删除</a>
+                              </td>
+                          </tr>
+                        </foreach>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 新增模态框开始 -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">新增新闻分类</h4>
+            </div>
+            <div class="modal-body">
+                <form id="subform">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">分类名称</label>
+                        <input type="text" name="cateName" class="form-control" id="exampleInputEmail1" placeholder="分类名称">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">顺序</label>
+                        <input type="number" name="sort" class="form-control" id="exampleInputPassword1" placeholder="顺序" min="0">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="btnsubmint">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 新增模态框结束 -->
+<!-- end navbar -->
+<script src="__PUBLIC__/admin/bootstrap/js/jquery-latest.js"></script>
+<script src="__PUBLIC__/admin/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+       $("#btnsubmint").click(function(){
+           var dataF =   $('#subform').serialize();
+           $.post("{:U('addCategory')}",dataF,function(data){
+               console.log(data);
+               if(data.success == '1'){
+                   window.location.reload();
+               }
+
+
+           });
+
+
+       });
+        $('#myModal').on('shown.bs.modal', function () {
+            $('#subform').reset();
+        })
+
+    });
+
+
+</script>
+</body>
+
+</html>

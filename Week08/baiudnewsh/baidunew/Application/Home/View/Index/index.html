@@ -1,0 +1,169 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=320.1,minimum-scale=1.0,maximum-scale=1.0">
+    <title>百度新闻</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/main.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/swiper-3.3.0.min.css">
+</head>
+
+<body style="height: 736px;">
+<header>
+    <div class="ui-new-toolbar">
+        <div class="ui-new-toolbar-l">
+            <div class="ui-new-toolbar-btn btn-baidu"></div>
+            <div class="ui-new-toolbar-btn btn-userhome"></div>
+        </div>
+        <div class="ui-new-toolbar-r">
+            <div class="ui-new-toolbar-btn btn-search"></div>
+            <div class="ui-new-toolbar-btn btn-subscribe"></div>
+        </div>
+    </div>
+</header>
+<div id="index_view_content">
+    <div id="index_view_navigator">
+        <div class="divider"></div>
+        <div class="content">
+            <table>
+                <tbody>
+                <tr>
+                    <foreach name="categoryList" item="category">
+                        <td colspan="1">
+
+                                 <div><b></b><span>{$category.cate_name}</span></div>
+
+                        </td>
+                    </foreach>
+
+
+                </tr>
+                <tr class="last-shown-line">
+                    <foreach name="categoryList1" item="category">
+                        <td colspan="1">
+                            <div><b></b><span>{$category.cate_name}</span></div>
+                        </td>
+                    </foreach>
+
+
+                    <td colspan="2">
+                        <div class="more">更多
+                            <div class="down-triangle"></div>
+                        </div>
+                </td>
+                </tr>
+                </tbody>
+                </table>
+        </div>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+<div id="index_view_sections">
+    <div class="index-view-subpage index-view-subpage-chosen">
+        <div class="topic-gallery-container">
+            <div class="topic-gallery ui-line-icons" style="height: 246px;">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="__PUBLIC__/home/img/b219ebc4b74543a9c1a27be919178a82b901145d.png"></div>
+                        <div class="swiper-slide"><img src="__PUBLIC__/home/img/timg.jpeg"></div>
+                        <div class="swiper-slide"><img src="__PUBLIC__/home/img/timg2.png"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui-hotword">
+        <div class="ui-hotword-left">
+            <span>热点</span>
+        </div>
+        <ul class="ui-hotword-content" style="transition: margin-top 1s ease-out 0s; margin-top: -56px;">
+            <li class="ui-hotword-item" data-name="联合国前秘书长加利">
+                <span>联合国前秘书长加利</span>
+                <b class="ui-hotword-item-right"></b>
+            </li>
+            <li class="ui-hotword-item" data-name="习近平如何齐家治国">
+                <span>习近平如何齐家治国</span>
+                <b class="ui-hotword-item-right"></b>
+            </li>
+            <li class="ui-hotword-item" data-name="张嘴睡觉会变丑">
+                <span>张嘴睡觉会变丑</span>
+                <b class="ui-hotword-item-right"></b>
+            </li>
+            <li class="ui-hotword-item" data-name="越南女 跨省行骗">
+                <span>越南女 跨省行骗</span>
+                <b class="ui-hotword-item-right"></b>
+            </li>
+            <li class="ui-hotword-item" data-name="台南灯会 土拨鼠">
+                <span>台南灯会 土拨鼠</span>
+                <b class="ui-hotword-item-right"></b>
+            </li>
+            <li class="ui-hotword-item" data-name="22省份扶贫考核">
+                <span>22省份扶贫考核</span>
+                <b class="ui-hotword-item-right"></b>
+            </li>
+            <li class="ui-hotword-item" data-name="习近平 从严治党">
+                <span>习近平 从严治党</span>
+                <b class="ui-hotword-item-right"></b>
+            </li>
+            <li class="ui-hotword-item" data-name="杰布·布什退出大选">
+                <span>杰布·布什退出大选</span>
+                <b class="ui-hotword-item-right"></b>
+            </li>
+            <li class="ui-hotword-item" data-name="安徽痛经假">
+                <span>安徽痛经假</span>
+                <b class="ui-hotword-item-right"></b>
+            </li>
+            <li class="ui-hotword-item" data-name="习近平治国理政">
+                <span>习近平治国理政</span>
+                <b class="ui-hotword-item-right"></b>
+            </li>
+            <li class="ui-hotword-item" data-name="联合国前秘书长加利">
+                <span>联合国前秘书长加利</span>
+                <b class="ui-hotword-item-right"></b>
+            </li>
+        </ul>
+    </div>
+    <div class="index-view-subpage-feed">
+        <div class="index-list">
+            <foreach name="categoryInfoList" item="categoryInfo">
+                <div class="index-list-item">
+                    <div class="index-list-main   showleft">
+                        <div class="index-list-image">
+                            <i class="ivideoplay"></i>
+                            <img src="__ROOT__{$categoryInfo.img_url}">
+                        </div>
+                        <div class="index-list-main-text">
+                            <div class="index-list-main-title">{$categoryInfo.title}</div>
+                            <div class="index-list-main-abs">{$categoryInfo.content}</div>
+                        </div>
+                        <div class="index-list-bottom">
+                            <div class="index-list-main-time">
+                                <b class="tip-reason tip-fillred">新浪头条</b>
+                                <b class="index-list-main-site">新浪新闻</b>
+                                <b class="tip-time">1天前</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </foreach>
+
+            <!-- 1 start-->
+
+            <!-- 2 end-->
+        </div>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="__PUBLIC__/home/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/home/js/swiper-3.3.0.jquery.min.js"></script>
+<script type="text/javascript">
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: 5000, //可选选项，自动滑动
+    })
+</script>
+</body>
+
+</html>
